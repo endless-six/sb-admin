@@ -1,0 +1,23 @@
+<div class="sidebar-logo">
+    <a href="https://ng.ant.design/" target="_blank">
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+      <h1>LiveHnH</h1>
+    </a>
+</div>
+    <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+        <!-- <li *ngFor="let item of sideMenu" nz-submenu nzOpen [nzTitle]="item.title" [nzIcon]="item.icon">
+          <ul *ngIf="item.submenu">
+            <li *ngFor="let submenu of item.submenu" nz-menu-item nzMatchRouter>
+              <a routerLink="{{submenu.url}}">{{submenu.title}}</a>
+            </li>
+          </ul>
+        </li> -->
+        
+        <li *ngFor="let item of sideMenu" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzTooltipTitle]="isCollapsed ? item.title : ''">
+            <a [routerLink]="item.url">
+                <i nz-icon [nzType]="item.icon"></i>
+                <span>{{item.title}}</span>
+            </a>
+        </li>
+      </ul>
+  
